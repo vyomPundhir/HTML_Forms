@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <title>Form</title>
+</head>
+<body class="flex flex-col justify-center items-center bg-[black]">
+
+  <div class="w-[700px] h-[400px] flex flex-col items-center gap-[40px] bg-[grey] mt-20 rounded-[20px]">
+
+    <h1 class="text-[50px] font-[600]"><u>Fill The Form</u></h1>
+
+    <form class="border-4 border-[black] rounded-[10px] h-[250px] w-[500px] flex flex-col gap-[10px] pl-[30px]" id="userForm">
+
+      <div class="flex gap-[105px] pt-[10px]">
+
+        <label for="name" class="text-[20px] font-[600]">Name</label>
+        <input type="text" id="name" required class="w-[250px]">
+
+      </div>
+      
+      <div class="flex gap-[110px]">
+        <label for="email" class="text-[20px] font-[600]">Email</label>
+        <input type="email" name="email" id="email" required class="w-[250px]">
+      </div>
+      
+      <div class="flex gap-[20px]">
+        <label for="phone" class="text-[20px] font-[600]">Phone Number</label>
+        <input type="tel" name="number" id="number" required class="w-[250px]"><br>
+      </div>
+
+      <button type="submit" class=" w-[100px] text-[20px] font-[600] bg-[cyan] rounded ml-[150px] mt-[20px]">Submit</button>
+    </form>
+  </div>
+
+  <div id="output" class="hidden">
+    <h3>User Information:</h3>
+    <p><strong>Name:</strong> <span id="outputName"></span></p>
+    <p><strong>Email:</strong> <span id="outputEmail"></span></p>
+    <p><strong>Phone Number:</strong> <span id="outputPhoneNumber"></span></p>
+  </div>
+
+  <script src="./index.js"></script>
+
+  <!-- <script>
+        const userForm = document.getElementById("userForm");
+        const outputDiv = document.getElementById("output");
+        const outputName = document.getElementById("outputName");
+        const outputEmail = document.getElementById("outputEmail");
+        const outputPhoneNumber = document.getElementById("outputPhoneNumber");
+
+        userForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get user input
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const number = document.getElementById("number").value;
+
+            // Validate email using a simple regex pattern
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Display user information
+            outputName.textContent = name;
+            outputEmail.textContent = email;
+            outputPhoneNumber.textContent = number;
+            outputDiv.style.display = "block";
+        });
+    </script> -->
+</body>
+</html>
